@@ -8,7 +8,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <c:choose> 
-	<c:when test="${ customer.id == 0 }">
+	<c:when test="${ customer.id == null }">
 		<title>Add Customer</title>
 	</c:when>
 	<c:otherwise>
@@ -30,7 +30,7 @@
 	</div>
 	<div id="container">
 	<c:choose> 
-	<c:when test="${ customer.id == 0 }">
+	<c:when test="${ customer.id == null }">
 		<h3>Add Customer</h3>
 	</c:when>
 	<c:otherwise>
@@ -39,7 +39,6 @@
 	</c:choose>
 
 		<form:form action="addCustomer" modelAttribute="customer" method="post">
-			<form:hidden path="id" />
 			<table>
 				<tbody>
 					<tr>
